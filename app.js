@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
         <p>Année de naissance : ${character.birth_year}</p>
         <p>Poids : ${character.mass} kg</p>
         <p>Taille : ${character.height} cm</p>
-        <p><a href="/about?name=Padawan">À propos de ce site</a></p>
+        <p><a href="/about">À propos de ce site</a></p>
       </body>
       </html>
     `);
@@ -33,7 +33,6 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  const name = req.query.name || 'visiteur';
   res.send(`
     <!DOCTYPE html>
     <html lang="fr">
@@ -44,7 +43,7 @@ app.get('/about', (req, res) => {
     </head>
     <body>
       <h1>À propos</h1>
-      <p>Bonjour ${name} !</p>
+      <p>Bonjour Sara,</p>
       <p>Ce site a un seul et unique but : afficher mon personnage préféré
          de l'univers Star Wars.</p>
       <p>Sur la page d'accueil, vous y trouverez son nom, son année de
